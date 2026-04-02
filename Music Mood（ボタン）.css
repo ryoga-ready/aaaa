@@ -1,0 +1,54 @@
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+}
+
+.dishbtn,.drivebtn,.relaxbtn,.playbtn{
+    padding: 20px 60px;
+  font-size: 30px;
+  color: white;
+  background: #111;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* シーン別カラー（発光） */
+.dishbtn{
+  box-shadow: 0 0 15px #00f0ff;
+}
+.drivebtn{
+  box-shadow: 0 0 15px #00ff88;
+}
+.relaxbtn{
+  box-shadow: 0 0 15px #ff00c8;
+}
+.playbtn{
+  box-shadow: 0 0 15px #ff7b00;
+}
+
+/* ホバーでさらに光る */
+.dishbtn:hover {
+  box-shadow: 0 0 25px #00f0ff, 0 0 50px #00f0ff;
+  transform: translateY(-5px);
+}
+.drivebtn:hover {
+  box-shadow: 0 0 25px #00ff88, 0 0 50px #00ff88;
+  transform: translateY(-5px);
+}
+.relaxbtn:hover {
+  box-shadow: 0 0 25px #ff00c8, 0 0 50px #ff00c8;
+  transform: translateY(-5px);
+}
+
+.playbtn:hover {
+  box-shadow: 0 0 25px #ff7b00, 0 0 50px #ff7b00;
+  transform: translateY(-5px);
+}
