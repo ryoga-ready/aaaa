@@ -5,7 +5,7 @@ body{
 }
 
 /* メニュー全体 */
-#menu {
+#menu1 {
   position: relative;
   min-height: 100vh;
   background:black;
@@ -14,12 +14,12 @@ body{
   transition: opacity 1s;
 }
 
-#menu.show {
+#menu1.show {
   opacity: 1;
 }
 
 /* 発光レイヤー */
-#menu::before {
+#menu1::before {
   content: "";
   position: absolute;
   width: 300px;
@@ -41,7 +41,7 @@ body{
   }
 }
 
-#menu::after {
+#menu1::after {
   content: "";
   position: absolute;
   width: 250px;
@@ -72,15 +72,17 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .title{
     opacity: 0;
-    animation: fadein 2s forwards;
+    animation: fadein 1s forwards;
+    animation-delay: 1s;
     font-size: 50px;
   font-weight: bold;
   background: linear-gradient(90deg, #00f0ff, #ff00c8);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
 }
@@ -91,6 +93,26 @@ body{
         transform: scale(1.1);
     }
 }
+
+
+.image{
+    opacity: 0;
+    animation: fadein 1s forwards;
+    font-size: 30px;
+  font-weight: bold;
+  background: white;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+@keyframes fadein{
+    to{
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
 
 .fadeout{
     animation: fadeout 1s forwards;
@@ -114,7 +136,7 @@ body{
   transition: 1s;
 }
 
-#menu.show .Q1 {
+#menu1.show .Q1 {
   opacity: 1;
   transform: translateY(0);
 }
@@ -130,7 +152,8 @@ body{
   transition: 1s;
 }
 
-#menu.show .S1 {
+#menu1.show .S1 {
   opacity: 1;
   transform: translateY(0);
 }
+
