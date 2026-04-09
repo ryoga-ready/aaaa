@@ -32,3 +32,23 @@
     opacity: 1;
   }
 }
+
+#read2 {
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: 0;
+  transition: opacity 1s;
+  background: transparent;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+#read2.show{
+      opacity: 1;
+      transition: 1s;
+}
