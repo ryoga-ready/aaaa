@@ -19,10 +19,10 @@
     <div id="menu-container1">
     <div class="Q1">今はどんな気分ですか？</class></div>
     <div class="S1">あなたの今の気分にピッタリな音楽をお調べします。</class></div>
-    <button class="btn1" onclick="searchScene('少しだけ音楽を聴きたい')">少しだけ音楽を聴きたい</class></button>
-    <button class="btn2" onclick="searchScene('ドライブを楽しみたい')">ドライブを楽しみたい</class></button>
-    <button class="btn3" onclick="searchScene('リラックスしたい')">リラックスしたい</class></button>
-    <button class="btn4" onclick="searchScene('作業に集中したい')">作業に集中したい</class></button>
+    <button class="btn1" onclick="searchScene(this)">少しだけ音楽を聴きたい</class></button>
+    <button class="btn2" onclick="searchScene(this)">ドライブを楽しみたい</class></button>
+    <button class="btn3" onclick="searchScene(this)">リラックスしたい</class></button>
+    <button class="btn4" onclick="searchScene(this)">作業に集中したい</class></button>
     </div>
 </div>
 
@@ -35,7 +35,10 @@
 <h3><span class="answer2"></span>あなたにピッタリな楽曲を検索中。</h3>
 </div>
 
+<div id="read3">
+<div id="youtube-results"></div>.
 
+</div>
 
 
 <script src="Music Mood.js"></script>

@@ -16,11 +16,14 @@ let step=0;
  let answer12=false
  let answer13=false
  let answer14=false
- let answer1="";
-
+ let clickCount = 0;
+ let answer1=""
+ let answer2=""
 
 
 function searchScene(question1){
+
+clickCount++;
 
 /*------------------------------------★ステップ1開始★------------------------------------*/ 
 
@@ -28,7 +31,11 @@ if(step===0){
    const menucontainer1=document.getElementById("menu-container1")
    const menu1=document.getElementById("menu1");
    const read1=document.getElementById("read1")
-   answer1=question1;
+   if(clickCount === 1){
+  const text = question1.textContent;
+  answer1=text;
+
+}
 
    const btn1=document.querySelector(".btn1")
    const btn2=document.querySelector(".btn2")
@@ -79,10 +86,10 @@ if(answer1==="少しだけ音楽を聴きたい"&&step===1){
    setTimeout(()=>{
    answer11=true
    step+=1;
-   btn21.textContent="質問11-1"
-   btn22.textContent="質問11-2"
-   btn23.textContent="質問11-3"
-   btn24.textContent="質問11-4"
+   btn21.textContent="最近の曲が聞きたい"
+   btn22.textContent="気分を上げたい"
+   btn23.textContent="懐かしい曲が聞きたい"
+   btn24.textContent="落ち着きたい"
    },1000);
 }
 
@@ -90,10 +97,10 @@ if(answer1==="ドライブを楽しみたい"&&step===1){
 setTimeout(()=>{
    answer12=true
    step+=1;
-   btn21.textContent="質問12-1"
-   btn22.textContent="質問12-2"
-   btn23.textContent="質問12-3"
-   btn24.textContent="質問14-4"
+   btn21.textContent="アニソンメドレーが聞きたい"
+   btn22.textContent="テンション上げたい"
+   btn23.textContent="落ち着いた曲がいい"
+   btn24.textContent="ドラマチックな曲がいい"
     },1000);
 }
 
@@ -101,10 +108,10 @@ if(answer1==="リラックスしたい"&&step===1){
    setTimeout(()=>{
    answer13=true
    step+=1;
-   btn21.textContent="質問13-1"
-   btn22.textContent="質問13-2"
-   btn23.textContent="質問13-3"
-   btn24.textContent="質問13-4"
+   btn21.textContent="気持ちを上げたい気分"
+   btn22.textContent="落ち着きたい気分"
+   btn23.textContent="ポップな洋楽な気分"
+   btn24.textContent="失恋ソングな気分"
    },1000);
 }
 
@@ -112,10 +119,10 @@ if(answer1==="作業に集中したい"&&step===1){
    setTimeout(()=>{
    answer14=true
    step+=1;
-   btn21.textContent="質問14-1"
-   btn22.textContent="質問14-2"
-   btn23.textContent="質問14-3"
-   btn24.textContent="質問14-4"
+   btn21.textContent="とにかくずっと流しててほしい"
+   btn22.textContent="メドレーが聞きたい"
+   btn23.textContent="洋楽を流しててほしい"
+   btn24.textContent="思い出に浸りたい"
    },1000);
 }
 
@@ -128,7 +135,7 @@ setTimeout(()=>{
 read1.style.display = "none";
 read1.classList.remove("fadeout");
    },1000);
-},3000);
+},2500);
 
 /*-----------------------------ステップ1ロード完了-----------------------------*/ 
 
@@ -144,7 +151,7 @@ read1.classList.remove("fadeout");
        setTimeout(()=>{
        menucontainer1.classList.add("fadein");
       },10);
-},4000);
+},3000);
 /*-----------------------------ステップ2表示完了-----------------------------*/ 
    
 }
@@ -154,10 +161,15 @@ read1.classList.remove("fadeout");
 /*------------------------------------★ステップ2開始★------------------------------------*/ 
 
 if(step===2){
+  document.querySelector(".answer2").textContent = answer2;
+  if(clickCount === 2){
+   const text = question1.textContent;
+  answer2=text;
+}
+
    const menucontainer1=document.getElementById("menu-container1")
    const menu1=document.getElementById("menu1");
    const read2=document.getElementById("read2")
-   answer1=question1;
 
    const btn1=document.querySelector(".btn1")
    const btn2=document.querySelector(".btn2")
@@ -197,36 +209,125 @@ menucontainer1.classList.add("fadeout")
 /*-----------------------------ステップ2ロード開始-----------------------------*/ 
 
 let searchtime = 0;
-search();
+
+const search=setInterval(() => {
+
+  if(searchtime>= 3){
+    clearInterval(search);
+    showResult();
+    read2.classList.remove("fadein");
+    read2.classList.add("fadeout");
+    return
+  }
+  read2.classList.remove("fadein");
+  read2.classList.add("fadeout");
+
+  setTimeout(()=>{
+  read2.classList.remove("fadeout");
+  read2.classList.add("fadein");
+
+  },1010);
+  searchtime++
+}, 2000);
+
+/*search();
 
 function search(){
   if(searchtime >= 3){
+
+     read2.style.display="none";
+  step+=1;
+  showResult();
     return;
   }
   setTimeout(()=>{
     read2.classList.add("fadeout");
     setTimeout(()=>{
-      read2.classList.remove("show");
+      read2.classList.remove("fadeout");
     setTimeout(()=>{
       read2.classList.add("show");
     setTimeout(()=>{
-      read2.classList.remove("fadeout");
-      searchtime+= 1;
-      search();
-    },1000);
-     },2000);
-    },1000);
-  },2000);
-  
-}
+      read2.classList.remove("show");
 
+ searchtime+= 1;
+   search();
+
+    },1000);
+     },1000);
+    },1000);
+  },1000);
+
+  
+}/*
 /*-----------------------------ステップ2ロード完了-----------------------------*/ 
+/*if(searchtime>=3){
+  read2.style.display="none"
+  step+=1;
+}*/
 
 }/*------------------------------------★ステップ2終了★------------------------------------*/ 
 
 
 
+/*------------------------------------★ステップ3開始★------------------------------------*/ 
+function showResult(){
+
+  const read3 = document.getElementById("read3");
+  read3.style.display = "block";
+  read3.classList.add("show");
+
+console.log("answer2:", answer2);
+
+  const query = answer1 + " " + answer2+"J-POP official";
+  searchYouTube(query);
 }
+
+/*-----------------------------YOUTUBE API開始-----------------------------*/
+
+  const API_KEY = "AIzaSyBSB19O-OoQqonLwdDcfard8BHOpnP93P8";
+
+  async function searchYouTube(query) {
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=5&q=${encodeURIComponent(query)}&key=${API_KEY}`;
+    
+    const response = await fetch(url);
+    const data = await response.json();
+
+    console.log(data);
+
+  if(!data.items){
+    console.log("エラー:", data);
+    return;
+  }
+
+
+    const resultsDiv = document.getElementById("youtube-results");
+    resultsDiv.innerHTML = "";
+
+    data.items.forEach(item => {
+      const videoId = item.id.videoId;
+      const title = item.snippet.title;
+
+      const videoElement = document.createElement("div");
+      videoElement.innerHTML = `
+        <p>${title}</p>
+        <iframe width="300" height="200"
+          src="https://www.youtube.com/embed/${videoId}">
+        </iframe>
+      `;
+      resultsDiv.appendChild(videoElement);
+    });
+
+  }
+
+  
+}
+
+/*-----------------------------YOUTUBE API終了-----------------------------*/
+
+/*------------------------------------★ステップ3終了★------------------------------------*/ 
+
+
+
 
 
 
