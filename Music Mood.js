@@ -1,3 +1,6 @@
+
+
+
 setTimeout(() => {
    const splash=document.getElementById("splash");
    splash.classList.add("fadeout")
