@@ -11,7 +11,7 @@
 }
 
 .btn1,.btn2,.btn3,.btn4{
-    padding: 20px 60px;
+  padding: 20px 60px;
   font-size: 30px;
   color: white;
   background: #111;
@@ -56,4 +56,24 @@
 
 .no-click{
   pointer-events: none;
+}
+
+.backbtn{
+  box-shadow: 0 0 15px #e2ec58;
+}
+
+.backbtn:hover {
+  box-shadow: 0 0 25px #ff7b00, 0 0 50px #ff7b00;
+  transform: translateY(-5px);
+}
+
+.backbtn{
+  padding: 10px 30px;
+  font-size: 30px;
+  color: white;
+  background: #111;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
 }

@@ -317,6 +317,7 @@ console.log("answer2:", answer2);
       resultsDiv.appendChild(videoElement);
     });
 
+
   }
 
   
@@ -325,6 +326,34 @@ console.log("answer2:", answer2);
 /*-----------------------------YOUTUBE API終了-----------------------------*/
 
 /*------------------------------------★ステップ3終了★------------------------------------*/ 
+
+function reset(){
+  step=0;
+  clickCount=0;
+  answer1="";
+  answer2="";
+  document.getElementById("read3").classList.add("fadeout")
+  console.log("reset動いた！");
+
+  setTimeout(()=>{
+  const menucontainer1=document.getElementById("menu-container1")
+  const read1=document.getElementById("read1")
+  const read2=document.getElementById("read2")
+  const read3=document.getElementById("read3")
+
+menucontainer1.style.display="flex"
+read1.style.display="none"
+read2.style.display="none"
+read3.style.display="none"
+
+read3.classList.remove("fadein");
+read3.classList.remove("fadeout");
+
+menucontainer1.classList.add("fadein")
+
+  },1000);
+
+}
 
 
 
