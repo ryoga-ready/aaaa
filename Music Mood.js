@@ -314,7 +314,7 @@ console.log("answer2:", answer2);
       videoElement.innerHTML = `
         <p>${title}</p>
         <iframe width="300" height="200"
-          src="https://www.youtube.com/embed/${videoId}">
+          src="https://www.youtube.com/embed/${videoId}?enablejsapi=1">
         </iframe>
       `;
       resultsDiv.appendChild(videoElement);
